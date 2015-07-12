@@ -1,5 +1,7 @@
 # mkfgdemo
-To run the application (on XAMPP):
+
+##To run the application (on XAMPP):
+
 1.) Install xampp and create user credentials for MySQL database
 2.) Create appropriate database in MySQL for connection
 3.) Install Composer and add it to path environment variable
