@@ -1,5 +1,5 @@
 <html>
-	<title>AirTote</title>
+	<title>Social Web App Demo</title>
     <meta charset = "utf-8">
     <head>
     	<?php
@@ -31,6 +31,5 @@
 				</form>
 			</div>
 		</div>
-        <footer>MKFG Apps</footer>
     </body>
 </html>
