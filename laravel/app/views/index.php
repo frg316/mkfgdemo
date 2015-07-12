@@ -12,11 +12,12 @@
 		form 		{ padding-bottom:20px; }
 		.comment 	{ padding-bottom:20px; }
 	</style>
-
+    <?php
+		include "upload.php";
+	?>
 	<!-- JS -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script> <!-- load angular -->
-
 	<!-- ANGULAR -->
 	<!-- all angular resources will be loaded from the /public folder -->
 		<script src="js/controllers/mainCtrl.js"></script> <!-- load our controller -->
@@ -34,7 +35,7 @@
 	</div>
 
 	<!-- NEW COMMENT FORM -->
-	<form ng-submit="submitComment()"> <!-- ng-submit will disable the default form action and use our function -->
+	<form ng-submit="submitComment()" method = "post" enctype="multipart/form-data" action = "upload.php"> <!-- ng-submit will disable the default form action and use our function -->
 
 		<!-- AUTHOR -->
 		<div class="form-group">
@@ -46,9 +47,13 @@
 			<input type="text" class="form-control input-lg" name="comment" ng-model="commentData.text" placeholder="Say what you have to say">
 		</div>
 		
+        <div class="form-group">
+        	Select image to upload:
+        	<input type= "file" name = "fileToUpload" id = "fileToUpload">
+        </div>
 		<!-- SUBMIT BUTTON -->
 		<div class="form-group text-right">	
-			<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+			<button type="submit" id = "submit" class="btn btn-primary btn-lg">Submit</button>
 		</div>
 	</form>
 
@@ -70,5 +75,23 @@
 	</div>
 
 </div>
+<script>
+/*$(document).on("click", "#submit", function() {
+	var file_data = $("#fileToUpload").prop("files")[0];   // Getting the properties of file from file field
+	var form_data = new FormData();                  // Creating object of FormData class
+	form_data.append("file", file_data)              // Appending parameter named file with properties of file_field to form_data
+	//form_data.append("user_id", 123)                 // Adding extra parameters to form_data
+	$.ajax({
+		  url: "upload.php",
+		  dataType: 'text',
+		  cache: false,
+		  contentType: false,
+		  processData: false,
+		  data: form_data,                       // Setting the data attribute of ajax with file_data
+		  type: 'post'
+       })
+})
+*/
+</script>
 </body>
 </html>
