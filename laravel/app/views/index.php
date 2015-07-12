@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Laravel and Angular Comment System</title>
+	<title>Social Web App Demo</title>
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"> <!-- load bootstrap via cdn -->
@@ -30,8 +30,7 @@
 
 	<!-- PAGE TITLE -->
 	<div class="page-header">
-		<h2>Laravel and Angular Single Page Application</h2>
-		<h4>Commenting System</h4>
+		<h2>Leave your comments below!</h2>
 	</div>
 
 	<!-- NEW COMMENT FORM -->
