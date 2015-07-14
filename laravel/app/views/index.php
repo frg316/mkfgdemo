@@ -70,28 +70,22 @@
 	<div class="comment" ng-hide="loading" ng-repeat="comment in comments">
 		<h3>Comment #{{ comment.id }} <small>by {{ comment.author }}</small></h3>
 		<p>{{ comment.text }}</p>
+		<!--tries to take the image path and loop through each record after each iteration of angular, query tries to grab ones that weren't pulled already
+		and loop through again, lol doesn't really work too well tho only displays the first image -->
+		<?php
+		if ($row = mysqli_fetch_array($res, MYSQL_ASSOC)){
+			$img = $row['image'];
+			$id = $row['id'];
+			echo "<img src = '$img' width='150' height='100'>";		
+		}
+		$sql = "Update comments set ispulled = 0 where id = '$id'";
+		$result = mysqli_query($con, $sql);
+		$sql = "Select image from comments where ispulled = 1 order by comments.id";
+		$res = mysqli_query($con, $sql);
 
+		?>
 		<p><a href="#" ng-click="deleteComment(comment.id)" class="text-muted">Delete</a></p>
 	</div>
-
 </div>
-<script>
-/*$(document).on("click", "#submit", function() {
-	var file_data = $("#fileToUpload").prop("files")[0];   // Getting the properties of file from file field
-	var form_data = new FormData();                  // Creating object of FormData class
-	form_data.append("file", file_data)              // Appending parameter named file with properties of file_field to form_data
-	//form_data.append("user_id", 123)                 // Adding extra parameters to form_data
-	$.ajax({
-		  url: "upload.php",
-		  dataType: 'text',
-		  cache: false,
-		  contentType: false,
-		  processData: false,
-		  data: form_data,                       // Setting the data attribute of ajax with file_data
-		  type: 'post'
-       })
-})
-*/
-</script>
 </body>
 </html>

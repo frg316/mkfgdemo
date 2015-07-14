@@ -1,0 +1,10 @@
+TRIGGER `setIsPulled` BEFORE INSERT ON `comments` FOR EACH ROW set @ispulled = 1 (trigger is for creating comments with images)
+
+comments(id->int 10, text->varchar 255, author->varchar 255, 
+		created_at->timestamp, updated_at->timestamp, image->text,
+		ispulled->int)
+
+user(id->int 11, username->text, password->text, email->text,
+	firstname->text, lastname->text)
+
+migrations(migration->varchar 255, batch->int 11)
