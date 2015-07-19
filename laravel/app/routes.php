@@ -39,3 +39,4 @@ Route::get('logout', array('uses' => 'LoginController@doLogout'));
 Route::get('register', array('uses' => 'CreateAcctController@showAcct'));
 
 Route::post('register', array('uses' =>'CreateAcctController@createAcct'));
+

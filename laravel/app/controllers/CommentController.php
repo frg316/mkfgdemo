@@ -21,7 +21,8 @@ class CommentController extends \BaseController {
 	{
 		Comment::create(array(
 			'author' => Session::get('email'),
-			'text' => Input::get('text')
+			'text' => Input::get('text'),
+			'image' => Input::get('image')
 			
 		));
 
@@ -52,4 +53,27 @@ class CommentController extends \BaseController {
 		return Response::json(array('success' => true));
 	}
 
+	public function upload(){
+		$file = array('image' => Input::file('image'));
+		$rules = array('image' => 'required');
+		$validator = Validator::make($file, $rules);
+
+		if($validator->fails()){
+			return Redirect::to('index')->withInput()->withErrors($validator);
+		}
+		else{
+			if(Input::file('image')->isValid()){
+				$destinationPath = 'uploads';
+				$extension = Input::file('image')->getClientOriginalExtension();
+				$fileName = rand(11111, 99999).'.'.$extension;
+				Input::file('image')->move($destinationPath, $fileName);
+				Session::flash('success', 'Upload successful');
+				return Redirect::to('index');
+			}
+			else{
+				Session::flash('error', 'not uploaded successfully');
+				return Redirect::to('index');
+			}
+		}
+	}
 }

@@ -39,7 +39,7 @@
 		</div>
 		<div class = "form-group">
 			Choose a picture to upload!
-			<input type ="file" class="btn btn-primary btn-lg" name="fileToUpload">
+			<input type ="file" class = "btn btn-primary btn-lg" name = "fileToUpload" ng-model ="commentData.image">
 		</div>
 		<!-- SUBMIT BUTTON -->
 		<div class="form-group text-right">	
