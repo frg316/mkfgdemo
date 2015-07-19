@@ -13,7 +13,11 @@
 
 {{ Form::open(array('url' => 'register')) }}
 <h2>Register to Use Our App Here</h2>
-
+    <div class = "container">
+    	@if(Session::has('message'))
+    		<p class = "alert">{{ Session::get('message') }}</p>
+    	@endif
+    </div>
 <p>
 	@foreach($errors->all() as $error)
 		<li>{{$error}}</li>

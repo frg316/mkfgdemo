@@ -2,9 +2,13 @@
 
 class LoginController extends BaseController{
 
+	public function __construct() {
+    	$this->beforeFilter('csrf', array('on'=>'post'));
+	}
+
 	public function showLogin(){
 		
-		return View::make('login');
+		return View::make('users.login');
 	}
 
 	public function doLogin(){
@@ -27,15 +31,15 @@ class LoginController extends BaseController{
 		}
 
 		if (Auth::attempt($userdata)){
-			return Redirect::to('index');
+			return Redirect::to('index')->with('message', 'Welcome back!');
 		}
 		else{
-			return Redirect::to('login');
+			return Redirect::to('login')->with('message', 'Sorry, invalid login');
 		}
 	}
 
 	public function doLogout(){
 		Auth::logout();
-		return Redirect::to('login');
+		return Redirect::to('users.login');
 	}
 }

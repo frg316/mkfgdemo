@@ -13,7 +13,11 @@
 
 {{ Form::open(array('url' => 'login')) }}
 <h1>Welcome to Our Social Web App Demo</h1>
-
+    <div class = "container">
+    	@if(Session::has('message'))
+    		<p class = "alert">{{ Session::get('message') }}</p>
+    	@endif
+    </div>
 <!-- if there are login errors, show them here -->
 @if (Session::get('loginError'))
 <div class ="alert alert-danger">{{Session::get('loginError')}}</div>
@@ -33,7 +37,10 @@
     {{ Form::password('password', array('class' =>'form-control input-sm')) }}
 </p>
 
-<p>{{ Form::submit('Submit!', array('class' => 'btn btn-primary btn-lg')) }}</p>
+<p>{{ Form::submit('Enter', array('class' => 'btn btn-primary btn-lg')) }}</p>
 {{ Form::close() }}
+Don't have an account?  Click here to create one:
+<p><p>
+<a href="{{ URL::to('register') }}" class = "btn btn-primary btn-lg">Create Account</a>
 </body>
 </html>
