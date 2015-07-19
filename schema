@@ -8,3 +8,5 @@ user(id->int 11, username->text, password->text, email->text,
 	firstname->text, lastname->text)
 
 migrations(migration->varchar 255, batch->int 11)
+
+loginattempts(id->bigint, address->text, datetime->datetime)
