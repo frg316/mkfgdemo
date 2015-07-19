@@ -19,8 +19,6 @@ Route::group(array('prefix' => 'api'), function() {
 	Route::resource('comments', 'CommentController', 
 		array('except' => array('create', 'edit', 'update')));
 
-	Route::resource('maps', 'DataMapController', 
-		array('except' => array('create', 'edit', 'update')));
 });
 
 // =============================================
@@ -43,3 +41,6 @@ Route::get('register', array('uses' => 'CreateAcctController@showAcct'));
 
 
 Route::post('register', array('uses' =>'CreateAcctController@createAcct'));
+
+//maps
+Route::get('maps', array('uses' => 'DataMapController@index'));

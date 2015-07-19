@@ -2,6 +2,10 @@
 
 class DataMapController extends BaseController{
 
+	public function index() {
+		return View::make('datamap');
+	}
+
 	/**
 	 * Render the world map page
 	 *

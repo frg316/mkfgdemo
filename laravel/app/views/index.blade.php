@@ -30,6 +30,8 @@
 	<div class="page-header">
 		<h2>Leave your comments below!</h2>
 	</div>
+	<strong>Check out what's currently toting!</strong>
+	<a href="/maps">Interactive Maps</a></br></br>
 
 	<!-- NEW COMMENT FORM -->
 	<form ng-submit="submitComment()" method = "post"> <!-- ng-submit will disable the default form action and use our function -->
