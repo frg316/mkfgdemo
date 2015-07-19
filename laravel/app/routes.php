@@ -19,7 +19,7 @@ Route::group(array('prefix' => 'api'), function() {
 	Route::resource('comments', 'CommentController', 
 		array('except' => array('create', 'edit', 'update')));
 
-	Route::resource('maps', 'MapController', 
+	Route::resource('maps', 'DataMapController', 
 		array('except' => array('create', 'edit', 'update')));
 });
 
