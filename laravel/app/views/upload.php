@@ -3,7 +3,7 @@
  * Downloaded from http://devzone.co.in
  */
 
-$con = mysqli_connect("localhost","root","scootingly19934","mkfgdemo");
+$con = mysqli_connect("localhost","root","koganm1","mkfgdemo");
 if (mysqli_connect_errno()) {
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
