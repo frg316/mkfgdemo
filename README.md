@@ -23,3 +23,4 @@
 5. Migrate your database (in project directory): `php artisan migrate`
 6. Seed your database (in project directory): `php artisan db:seed`
 7. View your application in browser.
+8. Login: laravel/public/login, Register (not yet functional): laravel/public/register
