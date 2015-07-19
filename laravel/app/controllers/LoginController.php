@@ -3,6 +3,7 @@
 class LoginController extends BaseController{
 
 	public function __construct() {
+
     	$this->beforeFilter('csrf', array('on'=>'post'));
 	}
 
@@ -12,6 +13,7 @@ class LoginController extends BaseController{
 	}
 
 	public function doLogin(){
+
 		$rules = array(
 			'email'		=> 'required|email',
 			'password'	=> 'required|alphaNum|min:5'
@@ -24,21 +26,21 @@ class LoginController extends BaseController{
 				->withInput(Input::except('password'));
 		}
 		else{
-			$userdata = array(
-				'email'		=>Input::get('email'),
-				'password'	=>Input::get('password')
-				);
-		}
+			if (Auth::attempt(array('email'=>Input::get('email'), 'password'=>Input::get('password')))) {
 
-		if (Auth::attempt($userdata)){
-			return Redirect::to('index')->with('message', 'Welcome back!');
-		}
-		else{
-			return Redirect::to('login')->with('message', 'Sorry, invalid login');
+				$user_data = Auth::user();
+				Session::put('email', $user_data->email);
+				
+				return Redirect::to('index')->with('message', 'Welcome back!');
+			}
+			else{
+				return Redirect::to('login')->with('message', 'Sorry, invalid login');
+			}
 		}
 	}
 
 	public function doLogout(){
+		
 		Auth::logout();
 		return Redirect::to('users.login');
 	}
