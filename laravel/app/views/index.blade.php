@@ -12,9 +12,6 @@
 		form 		{ padding-bottom:20px; }
 		.comment 	{ padding-bottom:20px; }
 	</style>
-    <?php
-		include "upload.php";
-	?>
 	<!-- JS -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script> <!-- load angular -->
@@ -35,22 +32,15 @@
 	</div>
 
 	<!-- NEW COMMENT FORM -->
-	<form ng-submit="submitComment()" method = "post" enctype="multipart/form-data" action = "upload.php"> <!-- ng-submit will disable the default form action and use our function -->
-
-		<!-- AUTHOR -->
-		<div class="form-group">
-			<input type="text" class="form-control input-sm" name="author" ng-model="commentData.author" placeholder="Name">
-		</div>
-
+	<form ng-submit="submitComment()" method = "post"> <!-- ng-submit will disable the default form action and use our function -->
 		<!-- COMMENT TEXT -->
 		<div class="form-group">
 			<input type="text" class="form-control input-lg" name="comment" ng-model="commentData.text" placeholder="Say what you have to say">
 		</div>
-		
-        <div class="form-group">
-        	Select image to upload:
-        	<input type= "file" name = "fileToUpload" id = "fileToUpload">
-        </div>
+		<div class = "form-group">
+			Choose a picture to upload!
+			<input type ="file" class="btn btn-primary btn-lg" name="fileToUpload">
+		</div>
 		<!-- SUBMIT BUTTON -->
 		<div class="form-group text-right">	
 			<button type="submit" id = "submit" class="btn btn-primary btn-lg">Submit</button>
@@ -58,7 +48,7 @@
 	</form>
 
 	<pre>
-	{{ commentData }}
+	@{{ commentData }}
 	</pre>
 
 	<!-- LOADING ICON -->
@@ -68,18 +58,10 @@
 	<!-- THE COMMENTS -->
 	<!-- hide these comments if the loading variable is true -->
 	<div class="comment" ng-hide="loading" ng-repeat="comment in comments">
-		<h3>Comment #{{ comment.id }} <small>by {{ comment.author }}</small></h3>
-		<p>{{ comment.text }}</p>
+		<h3>Comment # @{{ comment.id }} <small>by @{{ comment.author }}</small></h3>
+		<p> @{{ comment.text }}</p>
 		<!--tries to take the image path and loop through each record after each iteration of angular, query tries to grab ones that weren't pulled already
 		and loop through again, lol doesn't really work too well tho only displays the first image -->
-		<?php
-		if ($row = mysqli_fetch_array($res, MYSQL_ASSOC)){
-			$img = $row['image'];
-			$id = $row['id'];
-			echo "<img src = '$img' width='150' height='100'>";		
-		}
-
-		?>
 		<p><a href="#" ng-click="deleteComment(comment.id)" class="text-muted">Delete</a></p>
 	</div>
 </div>
