@@ -78,10 +78,6 @@
 			$id = $row['id'];
 			echo "<img src = '$img' width='150' height='100'>";		
 		}
-		$sql = "Update comments set ispulled = 0 where id = '$id'";
-		$result = mysqli_query($con, $sql);
-		$sql = "Select image from comments where ispulled = 1 order by comments.id";
-		$res = mysqli_query($con, $sql);
 
 		?>
 		<p><a href="#" ng-click="deleteComment(comment.id)" class="text-muted">Delete</a></p>

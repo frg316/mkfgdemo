@@ -15,7 +15,7 @@ if (isset($_FILES["fileToUpload"])) { // it is recommended to check file type an
         echo "Error: " . $_FILES["fileToUpload"]["error"] . "<br>";
     } else {
         move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $upload_dir . "/" . $_FILES["fileToUpload"]["name"]);
-		$sql = "UPDATE comments set image = '" . $_FILES["fileToUpload"]["name"] . "' where author = '$user' order by created_at desc limit 1";
+		$sql = "UPDATE comments set image = '" . $_FILES["fileToUpload"]["name"] . "', ispulled = 1 where author = '$user' order by created_at desc limit 1";
 		$result = mysqli_query($con, $sql);
         //echo "Uploaded File :" . $_FILES["fileToUpload"]["name"];
         //echo "<pre>";
@@ -24,7 +24,7 @@ if (isset($_FILES["fileToUpload"])) { // it is recommended to check file type an
     }
 }
 //gets images for display in index.php
-$sql = "Select id, image from comments order by comments.id";
+$sql = "Select id, image from comments where ispulled = 1 order by comments.id desc";
 $res = mysqli_query($con, $sql);
 $img = "";
 $id = "";

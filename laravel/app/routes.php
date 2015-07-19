@@ -29,3 +29,13 @@ App::missing(function($exception)
 {
 	return View::make('index');
 });
+
+Route::get('login', array('uses' => 'LoginController@showLogin'));
+
+Route::post('login', array('uses' =>'LoginController@doLogin'));
+
+Route::get('logout', array('uses' => 'LoginController@doLogout'));
+
+Route::get('register', array('uses' => 'CreateAcctController@showAcct'));
+
+//Route::post('register', array('uses' =>'CreateAcctController@createAcct'));

@@ -22,6 +22,7 @@ class CommentController extends \BaseController {
 		Comment::create(array(
 			'author' => Input::get('author'),
 			'text' => Input::get('text')
+			
 		));
 
 		return Response::json(array('success' => true));
