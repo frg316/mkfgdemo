@@ -31,7 +31,11 @@
 		<h2>Leave your comments below!</h2>
 	</div>
 	<strong>Check out what's currently toting!</strong>
+<<<<<<< HEAD
+	<a href="maps">Interactive Maps</a></br></br>
+=======
 	<a href="/maps">Interactive Maps</a></br></br>
+>>>>>>> origin/master
 
 	<!-- NEW COMMENT FORM -->
 	<form ng-submit="submitComment()" method = "post"> <!-- ng-submit will disable the default form action and use our function -->
@@ -41,7 +45,7 @@
 		</div>
 		<div class = "form-group">
 			Choose a picture to upload!
-			<input type ="file" class="btn btn-primary btn-lg" name="fileToUpload">
+			<input type ="file" class = "btn btn-primary btn-lg" name = "fileToUpload" ng-model ="commentData.image">
 		</div>
 		<!-- SUBMIT BUTTON -->
 		<div class="form-group text-right">	
