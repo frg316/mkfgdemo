@@ -18,6 +18,8 @@ class CreateCommentsTable extends Migration {
 
 			$table->string('text');
 			$table->string('author');
+			$table->string('location');
+			$table->string('image');
 
 			$table->timestamps();
 		});

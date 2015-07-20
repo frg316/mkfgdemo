@@ -106,6 +106,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+		'Stevebauman\Location\LocationServiceProvider',
 
 	),
 
@@ -155,6 +156,7 @@ return array(
 		'Input'           => 'Illuminate\Support\Facades\Input',
 		'Lang'            => 'Illuminate\Support\Facades\Lang',
 		'Log'             => 'Illuminate\Support\Facades\Log',
+		'Location'        => 'Stevebauman\Location\Facades\Location',
 		'Mail'            => 'Illuminate\Support\Facades\Mail',
 		'Paginator'       => 'Illuminate\Support\Facades\Paginator',
 		'Password'        => 'Illuminate\Support\Facades\Password',

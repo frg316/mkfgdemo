@@ -18,6 +18,7 @@ Route::group(array('prefix' => 'api'), function() {
 	// this ensures that a user can't access api/create or api/edit when there's nothing there
 	Route::resource('comments', 'CommentController', 
 		array('except' => array('create', 'edit', 'update')));
+
 });
 
 // =============================================
@@ -38,5 +39,8 @@ Route::get('logout', array('uses' => 'LoginController@doLogout'));
 
 Route::get('register', array('uses' => 'CreateAcctController@showAcct'));
 
+
 Route::post('register', array('uses' =>'CreateAcctController@createAcct'));
 
+//maps
+Route::get('maps', array('uses' => 'DataMapController@index'));
