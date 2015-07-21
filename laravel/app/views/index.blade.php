@@ -31,11 +31,7 @@
 		<h2>Leave your comments below!</h2>
 	</div>
 	<strong>Check out what's currently toting!</strong>
-<<<<<<< HEAD
 	<a href="maps">Interactive Maps</a></br></br>
-=======
-	<a href="/maps">Interactive Maps</a></br></br>
->>>>>>> origin/master
 
 	<!-- NEW COMMENT FORM -->
 	<form ng-submit="submitComment()" method = "post"> <!-- ng-submit will disable the default form action and use our function -->
@@ -66,6 +62,7 @@
 	<div class="comment" ng-hide="loading" ng-repeat="comment in comments">
 		<h3>Comment # @{{ comment.id }} <small>by @{{ comment.author }}</small></h3>
 		<p> @{{ comment.text }}</p>
+		<p> <img ng-src="@{{comment.image}}"</p>
 		<!--tries to take the image path and loop through each record after each iteration of angular, query tries to grab ones that weren't pulled already
 		and loop through again, lol doesn't really work too well tho only displays the first image -->
 		<p><a href="#" ng-click="deleteComment(comment.id)" class="text-muted">Delete</a></p>

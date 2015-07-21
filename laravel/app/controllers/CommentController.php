@@ -21,6 +21,7 @@ class CommentController extends \BaseController {
 	{
 		$location = Location::get('72.88.232.162')->countryCode;
 		$imgPath = basename(Input::get('image'));
+		//$imgPath = $this->getPath();
 		Comment::create(array(
 			'author' => Session::get('email'),
 			'text' => Input::get('text'),
@@ -56,17 +57,17 @@ class CommentController extends \BaseController {
 		return Response::json(array('success' => true));
 	}
 	public function getPath(){
-		$file = array('image' => Input::get('image'));
-		$rules = array('image' => 'required');
-		$validator = Validator::make($file, $rules);
-		if($validator->fails()){
-			return null;
+		//$file = array('image' => Input::file('image'));
+		//$rules = array('image' => 'required');
+		//$validator = Validator::make($file, $rules);
+		if(!Input::file('image')->isValid()){
+			return "";
 		}
 		else{
 				$destinationPath = 'uploads';
-				$extension = Input::get('image')->getClientOriginalExtension();
+				$extension = Input::file('image')->getClientOriginalExtension();
 				$fileName = rand(11111, 99999).'.'.$extension;
-				Input::get('image')->move($destinationPath, $fileName);
+				Input::file('image')->move($destinationPath, $fileName);
 				Session::flash('success', 'Upload successful');
 				return $destinationPath.'/'.$fileName;
 		}
