@@ -106,7 +106,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-		'Stevebauman\Location\LocationServiceProvider',
+		'Buonzz\GeoIP\Laravel4\ServiceProviders\GeoIPServiceProvider'
 
 	),
 
@@ -174,6 +174,7 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+		'GeoIP'           => 'Buonzz\GeoIP\Laravel4\Facades\GeoIP'
 
 	),
 

@@ -4,8 +4,13 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
+<<<<<<< HEAD
 		"laravel/framework": "4.1.*",
 		"stevebauman/location": "1.1.*"
+=======
+		"laravel/framework": "4.2.*",
+		"buonzz/laravel-4-freegeoip": "dev-master"
+>>>>>>> origin/master
 	},
 	"autoload": {
 		"classmap": [
