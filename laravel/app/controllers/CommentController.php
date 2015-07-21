@@ -19,13 +19,14 @@ class CommentController extends \BaseController {
 	 */
 	public function store()
 	{
-		$location = Location::get('72.88.232.162')->countryCode;
+		$location = new GeoIP;
+    	$location->setIP('112.209.247.183');
 		$imgPath = basename(Input::get('image'));
 		Comment::create(array(
 			'author' => Session::get('email'),
 			'text' => Input::get('text'),
 			'image' => $imgPath,
-			'location' => $location
+			'location' => $location->getCountry()
 			
 		));
 

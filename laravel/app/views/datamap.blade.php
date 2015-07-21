@@ -16,11 +16,8 @@
 <body>
 
 <h2>Some Cool Datamaps (courtesy of http://datamaps.github.io/)</h2></br>
-<<<<<<< HEAD
-<a href="index">Back to comment page</a>
-=======
-<a href="/">Back to comment page</a>
->>>>>>> origin/master
+
+<a href="/index">Back to comment page</a>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
