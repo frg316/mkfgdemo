@@ -63,6 +63,7 @@
 	<div class="comment" ng-hide="loading" ng-repeat="comment in comments">
 		<h3>Comment # @{{ comment.id }} <small>by @{{ comment.author }}</small></h3>
 		<p> @{{ comment.text }}</p>
+		<p> <img ng-src="@{{comment.image}}"</p>
 		<!--tries to take the image path and loop through each record after each iteration of angular, query tries to grab ones that weren't pulled already
 		and loop through again, lol doesn't really work too well tho only displays the first image -->
 		<p><a href="#" ng-click="deleteComment(comment.id)" class="text-muted">Delete</a></p>

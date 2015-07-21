@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'mkfgdemo',
 			'username'  => 'root',
-			'password'  => 'scootingly19934',
+			'password'  => 'koganm1',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
