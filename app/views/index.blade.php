@@ -31,9 +31,14 @@
 		<h2>Leave your comments below!</h2>
 	</div>
 	<strong>Check out what's currently toting!</strong>
+<<<<<<< HEAD:app/views/index.blade.php
 	<a href="maps">Interactive Maps</a></br></br>
 	<strong>Done checking us out?</strong><a href="logout">Log out</a>
 	<p>
+=======
+
+	<a href="/maps">Interactive Maps</a></br></br>
+>>>>>>> origin/master:laravel/app/views/index.blade.php
 
 	<!-- NEW COMMENT FORM -->
 	<form ng-submit="submitComment()" method = "post" enctype ="multipart/form-data"> <!-- ng-submit will disable the default form action and use our function -->
