@@ -1,6 +1,8 @@
-# Laravel and Angular Single Page Comment App
+# Social Web App Demo
 
-This is the repository for the [scotch.io tutorial](http://scotch.io/tutorials/php/create-a-laravel-and-angular-single-page-comment-application).
+This applcation is written with an AngularJs frontend and laravel backend (I know, we pulled out all the stops on this one).  Follow the steps below to run the application in your browser.
+
+This application features a login and create an account, as well as a commenting system which is viewable upon login.  Once logged into the app, users can post comments and upload pictures with those comments, and using a package developed by Buonzz, laravel can track which city they are located in based on their ip address.  This is useful for our dynamic map feature, which will be integrated with the comments to show where users are posting their comments from.
 
 ## Installation
 
@@ -10,4 +12,4 @@ This is the repository for the [scotch.io tutorial](http://scotch.io/tutorials/p
 4. Change your database settings in `app/config/database.php`
 5. Migrate your database: `php artisan migrate`
 6. Seed your database: `php artisan db:seed`
-7. View your application in browser.
+7. View your application in browser by typing localhost/laravel/public.
