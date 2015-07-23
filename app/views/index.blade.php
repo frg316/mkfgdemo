@@ -62,11 +62,7 @@
 	<!-- THE COMMENTS -->
 	<!-- hide these comments if the loading variable is true -->
 	<div class="comment" ng-hide="loading" ng-repeat="comment in comments">
-<<<<<<< HEAD:laravel/app/views/index.blade.php
-		<h3>Comment # @{{ comment.id }} <small>by @{{ comment.author }} (from @{{comment.location}})</small></h3>
-=======
 		<h3>Comment # @{{ comment.id }} <small>by @{{ comment.author }}</small> <small> in @{{ comment.location }} </small></h3>
->>>>>>> f03bbf8560256dddd6cbc60fe4a724b65d78ca3d:app/views/index.blade.php
 		<p> @{{ comment.text }}</p>
 		<p> <img ng-src="../Snapshot_20140225_1.JPG"</p>
 		<!--tries to take the image path and loop through each record after each iteration of angular, query tries to grab ones that weren't pulled already

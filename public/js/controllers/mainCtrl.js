@@ -22,12 +22,7 @@ angular.module('mainCtrl', [])
 			// save the comment. pass in comment data from the form
 			Comment.save($scope.commentData)
 				.success(function(data) {
-<<<<<<< HEAD:laravel/public/js/controllers/mainCtrl.js
-					console.log(data);
-
-=======
 					console.log($scope.commentData);
->>>>>>> f03bbf8560256dddd6cbc60fe4a724b65d78ca3d:public/js/controllers/mainCtrl.js
 					$scope.commentData = {};
 
 					// if successful, we'll need to refresh the comment list
