@@ -42,7 +42,7 @@
 		</div>
 		<div class = "form-group">
 			Choose a picture to upload!
-			<input type ="file" class = "btn btn-primary btn-lg" name = "fileToUpload" ng-model ="commentData.image">
+			<input type ="file" class = "btn btn-primary btn-lg" id="fileToUpload" name="fileToUpload" ng-model ="commentData.image">
 		</div>
 		<!-- SUBMIT BUTTON -->
 		<div class="form-group text-right">	
@@ -61,9 +61,9 @@
 	<!-- THE COMMENTS -->
 	<!-- hide these comments if the loading variable is true -->
 	<div class="comment" ng-hide="loading" ng-repeat="comment in comments">
-		<h3>Comment # @{{ comment.id }} <small>by @{{ comment.author }}</small></h3>
+		<h3>Comment # @{{ comment.id }} <small>by @{{ comment.author }} (from @{{comment.location}})</small></h3>
 		<p> @{{ comment.text }}</p>
-		<p> <img ng-src="@{{comment.image}}"</p>
+		<p> <img ng-src="../Snapshot_20140225_1.JPG"</p>
 		<!--tries to take the image path and loop through each record after each iteration of angular, query tries to grab ones that weren't pulled already
 		and loop through again, lol doesn't really work too well tho only displays the first image -->
 		<p><a href="#" ng-click="deleteComment(comment.id)" class="text-muted">Delete</a></p>

@@ -26,7 +26,7 @@ class CommentController extends \BaseController {
 			'author' => Session::get('email'),
 			'text' => Input::get('text'),
 			'image' => $imgPath,
-			'location' => GeoIP::getCountry()
+			'location' => GeoIP::getCity() . ", " . GeoIP::getCountry()
 			
 		));
 
