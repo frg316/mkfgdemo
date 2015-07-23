@@ -4,12 +4,8 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-<<<<<<< HEAD:composer.json
 		"laravel/framework": "4.1.*",
 		"stevebauman/location": "1.1.*",
-=======
-		"laravel/framework": "4.2.*",
->>>>>>> origin/master:laravel/composer.json
 		"buonzz/laravel-4-freegeoip": "dev-master"
 	},
 	"autoload": {
