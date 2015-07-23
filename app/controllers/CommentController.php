@@ -23,18 +23,19 @@ class CommentController extends \BaseController {
 	public function store()
 	{
 		GeoIP::setIP('112.209.247.183');
-<<<<<<< HEAD:app/controllers/CommentController.php
 		$location = GeoIP::getCity().', '.GeoIP::getCountry();
 		//$location = Location::get('72.88.232.162')->countryCode;
-=======
->>>>>>> origin/master:laravel/app/controllers/CommentController.php
 		$imgPath = basename(Input::get('image'));
 		//$imgPath = $this->getPath();
 		Comment::create(array(
 			'author' => Session::get('email'),
 			'text' => Input::get('text'),
 			'image' => $imgPath,
+<<<<<<< HEAD
 			'location' => GeoIP::getCity() . ", " . GeoIP::getCountry()
+=======
+			'location' => $location
+>>>>>>> ccf14371691a69e42e1ee64b58739a4d2b9d4410
 			
 		));
 

@@ -1,6 +1,6 @@
-var myApp = angular.module('mainCtrl', []);
+angular.module('mainCtrl', [])
 
-	myApp.controller('mainController', function($scope, $http, Comment) {
+	.controller('mainController', function($scope, $http, Comment) {
 		// object to hold all the data for the new comment form
 		$scope.commentData = {};
 
